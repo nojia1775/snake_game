@@ -1,6 +1,6 @@
 #include "../include/snake.h"
 
-static char	**init_map(char **map, int h, int l);
+static void	init_map(char **map, int h, int l);
 
 char	**create_map(int h, int l)
 {
@@ -14,7 +14,7 @@ char	**create_map(int h, int l)
 	if (!map)
 		return (NULL);
 	map[h] = NULL;
-	while (map[i])
+	while (i < h)
 	{
 		map[i] = (char *)malloc(sizeof(char) * (l + 1));
 		if (!map[i])
@@ -28,20 +28,20 @@ char	**create_map(int h, int l)
 		map[i][l] = '\0';
 		i++;
 	}
-	map = init_map(map, h, l);
+	init_map(map, h, l);
 	return (map);
 }
 
-static char	**init_map(char **map, int h, int l)
+static void	init_map(char **map, int h, int l)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (map[i])
+	while (i < h)
 	{
 		j = 0;
-		while (map[i][j])
+		while (j < l)
 		{
 			if (i == 0 || i == h - 1)
 				map[i][j] = '#';
@@ -53,5 +53,4 @@ static char	**init_map(char **map, int h, int l)
 		}
 		i++;
 	}
-	return (map);
 }

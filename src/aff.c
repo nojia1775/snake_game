@@ -9,7 +9,6 @@ void	aff(char **map, snake *head)
 	map[head->y][head->x] = 'O';
 	while (map[i])
 	{
-		printf("%d\n", i);
 		j = 0;
 		while (map[i][j])
 			printf("%c", map[i][j++]);
