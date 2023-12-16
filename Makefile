@@ -8,7 +8,8 @@ SRCS = src/main.c \
        src/ft_free.c \
        src/init_snake.c \
        src/param.c \
-       src/aff.c 
+       src/aff.c \
+       src/init_fruit.c
 
 OBJS = $(SRCS:.c=.o)
 
