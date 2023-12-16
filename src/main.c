@@ -13,6 +13,8 @@ int	main(int argc, char **argv)
 		return (2);
 	map = create_map(h, l);
 	head = init_snake(h, l);
+	if (!head)
+		return (3);
 	aff(map, head);
 	ft_free(map, head);
 	return (0);
