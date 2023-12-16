@@ -13,12 +13,14 @@ int	main(int argc, char **argv)
 	l = 20;
 	if (param(argc, argv, &h, &l))
 		return (2);
+	initscr();
 	map = create_map(h, l);
 	head = init_snake(h, l);
 	fruit = init_fruit(h, l, head);
 	if (!head)
 		return (3);
-	aff(map, head, fruit);
+	aff(map, head, fruit, h, l);
+	deplacement(map, head, fruit, h, l);
 	ft_free(map, head);
 	return (0);
 }

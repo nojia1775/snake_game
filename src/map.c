@@ -1,7 +1,5 @@
 #include "../include/snake.h"
 
-static void	init_map(char **map, int h, int l);
-
 char	**create_map(int h, int l)
 {
 	char	**map;
@@ -32,7 +30,7 @@ char	**create_map(int h, int l)
 	return (map);
 }
 
-static void	init_map(char **map, int h, int l)
+void	init_map(char **map, int h, int l)
 {
 	int	i;
 	int	j;

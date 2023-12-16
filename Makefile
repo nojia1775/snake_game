@@ -9,7 +9,9 @@ SRCS = src/main.c \
        src/init_snake.c \
        src/param.c \
        src/aff.c \
-       src/init_fruit.c
+       src/init_fruit.c \
+       src/deplacement.c \
+       src/collision.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -19,7 +21,7 @@ NAME = snake
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $^ -o $@ include/libft.a
+	$(CC) $(CFLAGS) $^ -o $@ include/libft.a -lcurses
 
 all: $(NAME)
 

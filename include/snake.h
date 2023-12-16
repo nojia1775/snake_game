@@ -6,6 +6,7 @@
 # include <stdlib.h>
 # include "libft.h"
 # include <time.h>
+# include <ncurses.h>
 
 typedef struct s_snake	snake;
 typedef struct s_obj	obj;
@@ -15,8 +16,11 @@ char	**create_map(int h, int l);
 void	ft_free(char **map, snake *head);
 snake	*init_snake(int h, int l);
 int	param(int argc, char **argv, int *h, int *l);
-void	aff(char **map, snake *head, obj fruit);
+void	aff(char **map, snake *head, obj fruit, int h, int l);
 obj	init_fruit(int h, int l, snake *head);
+void	deplacement(char **map, snake *head, obj fruit, int h, int l);
+void	init_map(char **map, int h, int l);
+int	collision(snake *head, obj *fruit, int h, int l);
 
 struct	s_snake
 {
