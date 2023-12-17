@@ -1,5 +1,8 @@
 #include "../include/snake.h"
 
+static int	aff_snake(snake *head, int i, int j);
+static void	aff_item(char **map, snake *head, obj fruit);
+
 void	aff(char **map, snake *head, obj fruit, int h, int l)
 {
 	int	i;
@@ -10,20 +13,19 @@ void	aff(char **map, snake *head, obj fruit, int h, int l)
 	init_pair(2, COLOR_GREEN, COLOR_BLACK);
 	i = 0;
 	init_map(map, h, l);
-	map[head->y][head->x] = 'O';
-	map[fruit.y][fruit.x] = '@';
+	aff_item(map, head, fruit);
 	while (map[i])
 	{
 		j = 0;
 		while (map[i][j])
 		{
-			if (i == fruit.y && j == fruit.x)
+			if (fruit.x == j && fruit.y == i)
 			{
 				attron(COLOR_PAIR(1));
 				printw("%c", map[i][j]);
 				attroff(COLOR_PAIR(1));
 			}
-			else if (i == head->y && j == head->x)
+			else if (aff_snake(head, i, j))
 			{
 				attron(COLOR_PAIR(2));
 				printw("%c", map[i][j]);
@@ -35,5 +37,33 @@ void	aff(char **map, snake *head, obj fruit, int h, int l)
 		}
 		i++;
 		printw("\n");
+	}
+}
+
+static int	aff_snake(snake *head, int i, int j)
+{
+	snake	*cur;
+
+	cur = head;
+	while (cur != NULL)
+	{
+		if (cur->x == j && cur->y == i)
+			return (1);
+		cur = cur->child;
+	}
+	return (0);
+}
+
+static void	aff_item(char **map, snake *head, obj fruit)
+{
+	snake	*cur;
+
+	map[head->y][head->x] = 'O';
+	map[fruit.y][fruit.x] = '@';
+	cur = head->child;
+	while (cur != NULL)
+	{
+		map[cur->y][cur->x] = 'o';
+		cur = cur->child;
 	}
 }

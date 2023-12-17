@@ -11,7 +11,11 @@ SRCS = src/main.c \
        src/aff.c \
        src/init_fruit.c \
        src/deplacement.c \
-       src/collision.c
+       src/collision.c \
+       src/queue.c \
+       src/maj_snake.c \
+       src/last_s.c \
+       src/free_snake.c
 
 OBJS = $(SRCS:.c=.o)
 

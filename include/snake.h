@@ -21,11 +21,17 @@ obj	init_fruit(int h, int l, snake *head);
 void	deplacement(char **map, snake *head, obj fruit, int h, int l);
 void	init_map(char **map, int h, int l);
 int	collision(snake *head, obj *fruit, int h, int l);
+int	queue(snake *head);
+snake	*last_s(snake *head);
+void	maj_snake(snake *head);
+void	free_snake(snake *head);
 
 struct	s_snake
 {
 	int	x;
 	int	y;
+	int	av_x;
+	int	av_y;
 	snake	*parent;
 	snake	*child;
 };
