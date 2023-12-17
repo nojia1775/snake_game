@@ -10,7 +10,7 @@ SRCS = src/main.c \
        src/param.c \
        src/aff.c \
        src/init_fruit.c \
-       src/deplacement.c \
+       src/temp.c \
        src/collision.c \
        src/queue.c \
        src/maj_snake.c \
