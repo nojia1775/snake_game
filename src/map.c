@@ -20,6 +20,7 @@ char	**create_map(int h, int l)
 			while (map[f])
 				free(map[f++]);
 			free(map);
+			return (NULL);
 		}
 		map[i][l] = '\0';
 		i++;
