@@ -18,10 +18,8 @@ char	**create_map(int h, int l)
 		if (!map[i])
 		{
 			while (map[f])
-			{
 				free(map[f++]);
-				free(map);
-			}
+			free(map);
 		}
 		map[i][l] = '\0';
 		i++;
