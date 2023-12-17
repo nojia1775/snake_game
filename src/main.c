@@ -17,7 +17,7 @@ int	main(int argc, char **argv)
 	map = create_map(h, l);
 	head = init_snake(h, l);
 	fruit = init_fruit(h, l, head);
-	if (!head)
+	if (!head || !map)
 		return (3);
 	aff(map, head, fruit, h, l);
 	deplacement(map, head, fruit, h, l);
