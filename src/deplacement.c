@@ -71,7 +71,7 @@ void	deplacement(char **map, snake *head, obj fruit, int h, int l, int *score)
 				break;
 		}
 		clear();
-		if (collision(head, &fruit, h, l, score))
+		if (collision(head, &fruit, h, l, score) || score == l * h * 10)
 		{
 			endwin();
 			return ;

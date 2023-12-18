@@ -25,6 +25,7 @@ int		queue(snake *head);
 snake	*last_s(snake *head);
 void	maj_snake(snake *head);
 void	free_snake(snake *head);
+void	highscore(int score);
 
 struct	s_snake
 {

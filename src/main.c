@@ -4,7 +4,7 @@ int	main(int argc, char **argv)
 {
 	char	**map;
 	snake	*head;
-	obj	fruit;
+	obj		fruit;
 	int		h;
 	int		l;
 	int		score;
@@ -25,6 +25,12 @@ int	main(int argc, char **argv)
 	deplacement(map, head, fruit, h, l, &score);
 	ft_free(map, head);
 	system("clear");
+	if (score == l * h * 10)
+	{
+		printf("Bravo tu as gagne !\nScore : %d", score);
+		return (0);
+	}
 	printf("Game Over\nScore : %d\n", score);
+	highscore(score);
 	return (0);
 }

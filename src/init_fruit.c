@@ -4,7 +4,7 @@ static int	col_sf(snake *head, obj fruit);
 
 obj	init_fruit(int h, int l, snake *head)
 {
-	obj	fruit;
+	obj		fruit;
 
 	do
 	{

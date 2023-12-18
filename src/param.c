@@ -15,8 +15,8 @@ int	param(int argc, char **argv, int *h, int *l)
 	{
 		*h = ft_atoi(argv[1]);
 		*l = ft_atoi(argv[2]);
-		if (*h > 50 || *h < 4 || *l > 100 || *l < 4)
-			return (printf("Arguments invalides\n4 <= hauteur <= 50\n4 <= largeur <= 100\n"));
+		if (*h > 50 || *h < 10 || *l > 100 || *l < 20)
+			return (printf("Arguments invalides\n10 <= hauteur <= 50\n20 <= largeur <= 100\n"));
 	}
 	return (0);
 }

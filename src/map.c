@@ -3,8 +3,8 @@
 char	**create_map(int h, int l)
 {
 	char	**map;
-	int	i;
-	int	f;
+	int		i;
+	int		f;
 
 	f = 0;
 	i = 0;

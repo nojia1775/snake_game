@@ -5,15 +5,26 @@ static void	aff_item(char **map, snake *head, obj fruit);
 
 void	aff(char **map, snake *head, obj fruit, int h, int l, int *score)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
+	int		fd;
+	int		high;
+	char	buf[7];
 
+	fd = open(".highscore", O_RDONLY);
+	if (fd < 0)
+		high = 0;
+	else
+	{
+		read(fd, buf, 7);
+		high = ft_atoi(buf);
+	}
 	start_color();
 	init_pair(1, COLOR_RED, COLOR_BLACK);
 	init_pair(2, COLOR_GREEN, COLOR_BLACK);
 	i = 0;
 	printw("------------------------- SNAKE --------------------------\n\n");
-	printw("SCORE : %d\n\n", *score);
+	printw("SCORE : %d\nHIGHSCORE : %d\n\n", *score, high);
 	init_map(map, h, l);
 	aff_item(map, head, fruit);
 	while (map[i])

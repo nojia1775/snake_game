@@ -2,7 +2,7 @@
 
 void	ft_free(char **map, snake *head)
 {
-	int	i;
+	int		i;
 	
 	i = 0;
 	while (map[i++])
