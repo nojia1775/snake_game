@@ -3,7 +3,7 @@
 static int	aff_snake(snake *head, int i, int j);
 static void	aff_item(char **map, snake *head, obj fruit);
 
-void	aff(char **map, snake *head, obj fruit, int h, int l)
+void	aff(char **map, snake *head, obj fruit, int h, int l, int *score)
 {
 	int	i;
 	int	j;
@@ -12,6 +12,8 @@ void	aff(char **map, snake *head, obj fruit, int h, int l)
 	init_pair(1, COLOR_RED, COLOR_BLACK);
 	init_pair(2, COLOR_GREEN, COLOR_BLACK);
 	i = 0;
+	printw("------------------------- SNAKE --------------------------\n\n");
+	printw("SCORE : %d\n\n", *score);
 	init_map(map, h, l);
 	aff_item(map, head, fruit);
 	while (map[i])

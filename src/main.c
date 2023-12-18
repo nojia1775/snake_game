@@ -5,9 +5,11 @@ int	main(int argc, char **argv)
 	char	**map;
 	snake	*head;
 	obj	fruit;
-	int	h;
-	int	l;
+	int		h;
+	int		l;
+	int		score;
 
+	score = 0;
 	srand(time(NULL));
 	h = 10;
 	l = 20;
@@ -19,8 +21,10 @@ int	main(int argc, char **argv)
 	fruit = init_fruit(h, l, head);
 	if (!head || !map)
 		return (3);
-	aff(map, head, fruit, h, l);
-	deplacement(map, head, fruit, h, l);
+	aff(map, head, fruit, h, l, &score);
+	deplacement(map, head, fruit, h, l, &score);
 	ft_free(map, head);
+	system("clear");
+	printf("Game Over\nScore : %d\n", score);
 	return (0);
 }

@@ -2,13 +2,14 @@
 
 static	int	col_q(snake *head);
 
-int	collision(snake *head, obj *fruit, int h, int l)
+int	collision(snake *head, obj *fruit, int h, int l, int *score)
 {
 	if (fruit->x == head->x && fruit->y == head->y)
 	{
 		if (!(queue(head)))
 			return (2);
 		*fruit = init_fruit(h, l, head);
+		(*score) += 10;
 	}
 	if (head->x == 0 || head->x == l - 1 || head->y == 0 || head->y == h - 1)
 		return (1);
