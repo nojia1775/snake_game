@@ -4,9 +4,7 @@ char	**create_map(int h, int l)
 {
 	char	**map;
 	int		i;
-	int		f;
 
-	f = 0;
 	i = 0;
 	map = (char **)malloc(sizeof(char *) * (h + 1));
 	if (!map)
@@ -17,8 +15,8 @@ char	**create_map(int h, int l)
 		map[i] = (char *)malloc(sizeof(char) * (l + 1));
 		if (!map[i])
 		{
-			while (map[f])
-				free(map[f++]);
+			while (i > 0)
+				free(map[--i]);
 			free(map);
 			return (NULL);
 		}

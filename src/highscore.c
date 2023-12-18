@@ -3,13 +3,13 @@
 void    highscore(int score)
 {
     int     fd;
-    char    buf[7];
+    char    buf[7] = {0};
+    char    *pts;
 
     fd = open(".highscore", O_RDWR | O_CREAT);
     if (fd < 0)
         return ;
-    read(fd, buf, 7);
-    if (score < ft_atoi(buf))
+    if ((read(fd, buf, 7)) == 0 || score < ft_atoi(buf))
     {
         close(fd);
         return ;
@@ -20,6 +20,8 @@ void    highscore(int score)
     fd = open(".highscore", O_RDWR);
     if (fd < 0)
         return ;
-    write(fd, ft_itoa(score), ft_strlen(ft_itoa(score)));
+    pts = ft_itoa(score);
+    write(fd, pts, ft_strlen(pts));
+    free(pts);
     close(fd);
 }

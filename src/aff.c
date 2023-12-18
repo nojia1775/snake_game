@@ -9,7 +9,7 @@ void	aff(char **map, snake *head, obj fruit, int h, int l, int *score)
 	int		j;
 	int		fd;
 	int		high;
-	char	buf[7];
+	char	buf[7] = {0};
 
 	fd = open(".highscore", O_RDONLY);
 	if (fd < 0)
@@ -51,6 +51,7 @@ void	aff(char **map, snake *head, obj fruit, int h, int l, int *score)
 		i++;
 		printw("\n");
 	}
+	endwin();
 }
 
 static int	aff_snake(snake *head, int i, int j)
