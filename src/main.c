@@ -24,11 +24,11 @@ int	main(int argc, char **argv)
 	aff(map, head, fruit, h, l, &score);
 	deplacement(map, head, fruit, h, l, &score);
 	ft_free(map, head);
+	endwin();
 	if (score == l * h * 10)
 		printf("Bravo tu as gagne !\nScore : %d", score);
 	else
 		printf("Game Over\nScore : %d\n", score);
 	highscore(score);
-	endwin();
 	return (0);
 }

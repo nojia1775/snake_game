@@ -11,7 +11,7 @@ void	aff(char **map, snake *head, obj fruit, int h, int l, int *score)
 	int		high;
 	char	buf[7] = {0};
 
-	fd = open(".highscore", O_RDONLY);
+	fd = open(".highscore", O_RDWR);
 	if (fd < 0)
 		high = 0;
 	else
