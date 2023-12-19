@@ -16,7 +16,8 @@ SRCS = src/main.c \
        src/maj_snake.c \
        src/last_s.c \
        src/free_snake.c \
-       src/highscore.c
+       src/highscore.c \
+       src/my_itoa.c
 
 OBJS = $(SRCS:.c=.o)
 
