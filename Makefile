@@ -19,6 +19,10 @@ SRCS = src/main.c \
        src/highscore.c \
        src/my_itoa.c
 
+SRCS_A = alias/get_next_line.c \
+	 alias/get_next_line_utils.c \
+	 alias/prog.c 
+
 OBJS = $(SRCS:.c=.o)
 
 NAME = snake
@@ -30,6 +34,14 @@ $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $^ -o $@ include/libft.a -lcurses
 
 all: $(NAME)
+
+install: all
+	mkdir -p ~/.myBin
+	mv snake ~/.myBin
+	$(CC) $(CFLAGS) $(SRCS_A) -o main
+	./main
+	rm main
+	. ~/.zshrc
 
 clean:
 	rm -f $(OBJS)
