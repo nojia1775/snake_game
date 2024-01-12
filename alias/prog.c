@@ -9,7 +9,7 @@ int	main(void)
 
 	fd = fopen("/home/nadjemia/.zshrc", "a");
 	if (fd != NULL)
-		fprintf(fd, "\n\nalias snake=/home/nadjemia/.myBin");
+		fprintf(fd, "\n\nalias snake=/home/nadjemia/.myBin/snake");
 	else
 		return (2);
 	fclose(fd);
