@@ -9,7 +9,7 @@ void    highscore(int score)
 	fd = open(".highscore", O_RDWR | O_CREAT);
 	if (fd < 0)
 		return ;
-	//system("chmod 777 .highscore");
+	read(fd, buf, sizeof(buf));
 	if (score < ft_atoi(buf))
 	{
 		close(fd);
@@ -18,7 +18,6 @@ void    highscore(int score)
 	close(fd);
 	system("rm -f .highscore");
 	system("touch .highscore");
-	//system("chmod 777 .highscore");
 	fd = open(".highscore", O_RDWR);
 	if (fd < 0)
 	{
