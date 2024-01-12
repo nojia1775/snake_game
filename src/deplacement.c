@@ -19,7 +19,7 @@ void	deplacement(char **map, snake *head, obj fruit, int h, int l, int *score)
 			dir = av;
 		switch (dir)
 		{
-			case 'z':
+			case 'w':
 				if (av == 's')
 				{
 					dir = 's';
@@ -31,9 +31,9 @@ void	deplacement(char **map, snake *head, obj fruit, int h, int l, int *score)
 				maj_snake(head);
 				break;
 			case 's':
-				if (av == 'z')
+				if (av == 'w')
 				{
-					dir = 'z';
+					dir = 'w';
 					break;
 				}
 				head->av_y = head->y;
@@ -41,7 +41,7 @@ void	deplacement(char **map, snake *head, obj fruit, int h, int l, int *score)
 				head->y++;
 				maj_snake(head);
 				break;
-			case 'q':
+			case 'a':
 				if (av == 'd')
 				{
 					dir = 'd';
@@ -53,9 +53,9 @@ void	deplacement(char **map, snake *head, obj fruit, int h, int l, int *score)
 				maj_snake(head);
 				break;
 			case 'd':
-				if (av == 'q')
+				if (av == 'a')
 				{
-					dir = 'q';
+					dir = 'a';
 					break;
 				}
 				head->av_y = head->y;
